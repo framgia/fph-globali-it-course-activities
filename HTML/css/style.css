@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+body {
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+.container1 {
+	width: 700px;
+	height: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#header {
+	width: 685px;
+	height: 85px;
+	padding-top: 15px;
+	padding-left: 15px;
+	background: linear-gradient(to bottom, #33ccff 0%, #ccffcc 100%);
+}
+
+#maincontent {
+	width: 685px;
+	padding-left: 15px;
+}
+
+.content {
+	width: 320px;
+	height: 320px;
+	float: left;
+}
+
+p {
+	font-size: 13px;
+	margin: 0;
+}
+
+.content2 {
+	margin-top: 15px;
+	float: left;
+	width: 500px;
+}
+
+#footer {
+	width: 685px;
+	height: 85px;
+	background: linear-gradient(to bottom, #ccffcc 0%, #33ccff 100%);
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+h1 {
+	font-size: 30px;
+	margin: 0;
+}
+
+h3, h4 {
+	margin: 0;
+}
+
+.contentcenter {
+	width: 600px;
+	margin-left: 25px;
+	margin-right: auto;
+	text-align: center;
+}
+
+.favcolor {
+	color: navy;
+}
+
+.profilephoto {
+	border-radius: 50%;
+}
+
+.imagecontainer {
+	float:left;
+	width: 150px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.infocontainer {
+	float:left;
+	width: 480px;
+}
+
+.infospan {
+	margin-right: 20px;
+}
+
+.selfintro {
+	width: 655px;
+	margin-left: 20px;
+	margin-top: 20px;
+	float: left;
+}
+
+.selfintroinfo {
+	float: left;
+	margin-top:10px;
+	border: 2px solid #10abbc;
+	padding: 10px;
+}
+
+.selffav {
+	width: 655px;
+	margin-left: 20px;
+	float: left;
+	margin-top: 10px;
+}
+
+.favdiv {
+	width: 200px;
+	float: left;
+	margin-right: 15px;
+}
+
+.goal {
+	font-style: italic;
+	font-size: 18px;
+}
+
+.socialmedia {
+	margin-top: 20px;
+	margin-left: 30px;
+	width: 655px;
+	float: left;
+}
+
+.sociallink {
+	font-size: 20px;
+	margin-right: 25px;
+	text-decoration: none;
+}
+
+.educontainer {
+	float: left;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+
+table, th, td {
+	margin-top: 10px;
+	border: 1px solid #10abbc;
+	border-collapse: collapse;
+	font-size: 15px;
+	padding: 5px;
+}
+
+th {
+	background-color: #82b6bc;
+}
+
+tr:nth-child(odd) {
+	background-color: #edfdff;
+}
+
+.workdiv {
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}

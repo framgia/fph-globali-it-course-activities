@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body {
+		font-family: arial;
+		font-size: 14px;
+		color: #194275;
+		background: #f12711;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		margin-top: 50px;
+	}
+
+	.loginbox {
+		padding-top: 20px;
+		width: 340px;
+		height: 340px;
+		border-radius: 20px;
+		text-align: center;
+		margin: 0 auto;
+		background-color: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	a {
+		color: #194275;
+		text-decoration: none;
+	}
+
+	input[type=text], input[type=password] {
+		width: 80%;
+		padding: 10px;
+		font-size: 14px;
+		color: #194275;;
+		border-width: 0 0 2px 0;
+		border-color: #194275;
+	}
+
+	button {
+	    background-color: white; /* Green */
+	    border: 2px solid #194275;
+	    border-radius: 5px;
+	    color: #194275;
+	    padding: 5px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    -webkit-transition-duration: 0.4s; /* Safari */
+	    transition-duration: 0.4s;
+	    cursor: pointer;
+	}
+
+	button:hover {
+	    background-color: #194275;
+	    color: white;
+	}
+</style>
+
+</head>
+<body>
+
+<div class="loginbox">
+	<img src="images/computer.png" width="80">
+	<h3>Sign in your account</h3>
+	<input type="text" name="username" placeholder="Username" required><br>
+	<input type="password" name="password" placeholder="Password" required>
+	<br><br>
+	<button>Login</button>
+	<br><br>
+	<input type="checkbox" name="rememberme"> Remember Me | <a href="#">Forgot Password</a>
+</div>
+
+</body>
+</html>
