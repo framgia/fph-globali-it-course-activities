@@ -29,6 +29,8 @@ class BookController extends Controller
         $book->title = $request->input('title');
         $book->description = $request->input('description');
         $book->save(); // save the values to DB
+
+        return redirect()->route('show', ['id' => $book->id]);
     }
 
     public function show($id)
