@@ -1,6 +1,6 @@
 @extends('master')
 
- @section('content')
+@section('content')
 <div>
     <div class="text-center">
         <h2> List of all the Books </h2>
@@ -15,11 +15,13 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($books as $book)
                 <tr>
-                    <td class="text-center">1</td>
-                    <td class="text-center">Book title</td>
-                    <td class="text-center">Book description</td>
+                    <td class="text-center">{{ $book->id }}</td>
+                    <td class="text-center">{{ $book->title }}</td>
+                    <td class="text-center">{{ $book->description }}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

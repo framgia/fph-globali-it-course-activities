@@ -9,9 +9,10 @@ class BookController extends Controller
 {
     public function index()
     {
-        
-        // just return the blade file (for now)
-        return view('index');
+        $books = Book::all(); // get all the books
+
+        // return the blade file with the $books variable
+        return view('index', compact('books'));
     }
 
     public function create()
