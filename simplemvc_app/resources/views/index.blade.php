@@ -13,6 +13,7 @@
                     <th class="text-center">ID</th>
                     <th class="text-center">Title</th>
                     <th class="text-center">Description</th>
+                    <th class="text-center">Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                     <td class="text-center"><a href="{{ route('show', ['id' => $book->id]) }}">{{ $book->id }}</a></td>
                     <td class="text-center">{{ $book->title }}</td>
                     <td class="text-center">{{ $book->description }}</td>
+                    <td class="text-center"><a href="{{ route('edit', ['id' => $book->id]) }}">Edit</a></td>
                 </tr>
                 @endforeach
             </tbody>
