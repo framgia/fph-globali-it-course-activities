@@ -58,4 +58,13 @@ class BookController extends Controller
         $book->description = $request->input('description');
         $book->save();
     }
+
+    public function destroy($id)
+    {
+        // get the book with given id parameter
+        $book = Book::find($id);
+        
+        // delete is a built-in method for deleting objects
+        $book->delete();
+    }
 }
