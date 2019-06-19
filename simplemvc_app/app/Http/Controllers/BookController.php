@@ -30,4 +30,12 @@ class BookController extends Controller
         $book->description = $request->input('description');
         $book->save(); // save the values to DB
     }
+
+    public function show($id)
+    {
+        // get the book with given id parameter
+        $book = Book::find($id);
+
+        return view('show', compact('book'));
+    }
 }
