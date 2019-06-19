@@ -4,6 +4,7 @@
 <div>
     <div class="text-center">
         <h2> List of all the Books </h2>
+        <a href="{{ route('create') }}"> Add a Book </a>
     </div>
     <div>
         <table class="table">
