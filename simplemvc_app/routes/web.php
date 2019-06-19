@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('create');
+    return redirect()->route('create');
 });
+
+Route::get('/books/create', 'BookController@create')->name('create');
