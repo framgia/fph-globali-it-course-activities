@@ -38,4 +38,13 @@ class BookController extends Controller
 
         return view('show', compact('book'));
     }
+
+    public function edit($id)
+    {
+        // get the book with given id parameter
+        $book = Book::find($id);
+
+        // then return the blade file with the $book variable
+        return view('edit', compact('book'));
+    }
 }
