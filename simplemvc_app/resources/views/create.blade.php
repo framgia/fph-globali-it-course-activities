@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <h2> Create a Book</h2>
-    <form action="/books" method="POST">
+    <form action="{{ route('store') }}" method="POST">
         @csrf
         <div>
             <label>Title: </label>
