@@ -3,7 +3,8 @@
 @section('content')
 <div>
     <h2> Create a Book</h2>
-    <form>
+    <form action="/books" method="POST">
+        @csrf
         <div>
             <label>Title: </label>
             <input name="title"/>
