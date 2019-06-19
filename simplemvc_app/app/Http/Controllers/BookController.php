@@ -47,4 +47,15 @@ class BookController extends Controller
         // then return the blade file with the $book variable
         return view('edit', compact('book'));
     }
+
+    public function update(Request $request, $id)
+    {
+        // get the book with given id parameter
+        $book = Book::find($id);
+
+        // save the values to DB
+        $book->title = $request->input('title');
+        $book->description = $request->input('description');
+        $book->save();
+    }
 }

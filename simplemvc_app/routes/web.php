@@ -20,3 +20,4 @@ Route::get('/books/create', 'BookController@create')->name('create');
 Route::post('/books', 'BookController@store');
 Route::get('/books/{id}', 'BookController@show')->name('show');
 Route::get('/books/{id}/edit', 'BookController@edit');
+Route::post('/books/{id}', 'BookController@update');
