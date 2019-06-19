@@ -4,7 +4,7 @@
 <div>
     <h2> Editing Book # {{ $book->id }} </h2>
     
-    <form action="/books/{{ $book->id }}" method="POST">
+    <form action="{{ route('update', ['id' => $book->id]) }}" method="POST">
         @csrf
      <div>
         <label>Title: </label>

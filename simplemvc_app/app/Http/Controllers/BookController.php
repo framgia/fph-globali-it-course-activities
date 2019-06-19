@@ -59,6 +59,8 @@ class BookController extends Controller
         $book->title = $request->input('title');
         $book->description = $request->input('description');
         $book->save();
+
+        return redirect()->route('index');
     }
 
     public function destroy($id)
