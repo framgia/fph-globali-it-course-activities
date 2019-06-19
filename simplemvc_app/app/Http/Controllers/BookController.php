@@ -68,5 +68,7 @@ class BookController extends Controller
         
         // delete is a built-in method for deleting objects
         $book->delete();
+
+        return redirect()->route('index');
     }
 }

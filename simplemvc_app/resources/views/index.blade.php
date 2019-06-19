@@ -22,7 +22,10 @@
                     <td class="text-center"><a href="{{ route('show', ['id' => $book->id]) }}">{{ $book->id }}</a></td>
                     <td class="text-center">{{ $book->title }}</td>
                     <td class="text-center">{{ $book->description }}</td>
-                    <td class="text-center"><a href="{{ route('edit', ['id' => $book->id]) }}">Edit</a></td>
+                    <td class="text-center">
+                        <a href="{{ route('edit', ['id' => $book->id]) }}">Edit</a>
+                        <a href="{{ route('delete', ['id' => $book->id]) }}">Delete</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
