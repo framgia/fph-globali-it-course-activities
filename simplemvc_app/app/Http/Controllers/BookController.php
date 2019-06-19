@@ -7,6 +7,13 @@ use App\Book;
 
 class BookController extends Controller
 {
+    public function index()
+    {
+        
+        // just return the blade file (for now)
+        return view('index');
+    }
+
     public function create()
     {
 
