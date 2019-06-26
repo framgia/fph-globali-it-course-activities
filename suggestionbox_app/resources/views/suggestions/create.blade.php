@@ -14,7 +14,8 @@
             <input name="author"/>
         </div>
         <div>
-            <button type="submit"> Add </button>
+            <button class="btn btn-success" type="submit"> Add </button>
+            <a href="{{ URL::previous() }}" class="btn btn-secondary">Back</a>
         </div>
     </form>
 </div>

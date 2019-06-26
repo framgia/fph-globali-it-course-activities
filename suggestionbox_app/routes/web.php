@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/suggestions', 'SuggestionController@index')->name('suggestions.index');
+Route::get('/suggestions/create', 'SuggestionController@create')->name('suggestions.create');
 Route::post('/suggestions', 'SuggestionController@store')->name('suggestions.store');

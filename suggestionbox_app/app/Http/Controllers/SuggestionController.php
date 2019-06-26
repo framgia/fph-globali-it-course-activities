@@ -14,6 +14,11 @@ class SuggestionController extends Controller
         return view('suggestions.index', compact('suggestions'));
     }
 
+    public function create()
+    {
+        return view('suggestions.create');
+    }
+
     public function store(Request $request)
     {
         Suggestion::create([

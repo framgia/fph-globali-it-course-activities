@@ -4,6 +4,7 @@
 <div>
     <div class="text-center">
         <h2> List of all the Suggestions </h2>
+        <a href="{{ route('suggestions.create') }}">Add a suggestion</a>
     </div>
     <div>
         <table class="table">
