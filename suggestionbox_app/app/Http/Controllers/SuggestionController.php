@@ -9,7 +9,9 @@ class SuggestionController extends Controller
 {
     public function index()
     {
-        return view('suggestions.index');
+        $suggestions = Suggestion::all();
+
+        return view('suggestions.index', compact('suggestions'));
     }
 
     public function store(Request $request)

@@ -15,11 +15,13 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($suggestions as $suggestion)
                 <tr>
-                    <td class="text-center">1</td>
-                    <td class="text-center">Anonymous</td>
-                    <td class="text-center">Sample Suggestion</td>
+                    <td class="text-center">{{ $suggestion->id }}</td>
+                    <td class="text-center">{{ $suggestion->author }}</td>
+                    <td class="text-center">{{ $suggestion->content }}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
