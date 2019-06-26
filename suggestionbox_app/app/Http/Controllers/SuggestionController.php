@@ -26,4 +26,11 @@ class SuggestionController extends Controller
             'author' => $request->input('author')
         ]);
     }
+
+    public function edit($id)
+    {
+        $suggestion = Suggestion::find($id);
+
+        return view('suggestions.edit', compact('suggestion'));
+    }
 }

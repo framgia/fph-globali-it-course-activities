@@ -13,6 +13,7 @@
                     <th class="text-center">ID</th>
                     <th class="text-center">Author</th>
                     <th class="text-center">Content</th>
+                    <th class="text-center">Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,9 @@
                     <td class="text-center">{{ $suggestion->id }}</td>
                     <td class="text-center">{{ $suggestion->author }}</td>
                     <td class="text-center">{{ $suggestion->content }}</td>
+                    <td class="text-center">
+                        <a href="{{ route('suggestions.edit', ['id' => $suggestion->id]) }}" class="btn btn-warning">Edit</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
