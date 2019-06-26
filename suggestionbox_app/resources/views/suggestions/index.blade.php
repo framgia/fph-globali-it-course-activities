@@ -13,6 +13,7 @@
                     <th class="text-center">ID</th>
                     <th class="text-center">Author</th>
                     <th class="text-center">Content</th>
+                    <th class="text-center">Vote</th>
                     <th class="text-center">Options</th>
                 </tr>
             </thead>
@@ -22,6 +23,12 @@
                     <td class="text-center">{{ $suggestion->id }}</td>
                     <td class="text-center">{{ $suggestion->author }}</td>
                     <td class="text-center">{{ $suggestion->content }}</td>
+                    <td class="text-center">
+                        <div class="d-inline-flex">
+                            <a href="" class="btn btn-light">Upvote</a>
+                            <a href="" class="btn btn-dark">Downvote</a>
+                        </div>
+                    </td>
                     <td class="text-center">
                         <div class="d-inline-flex">
                             <a href="{{ route('suggestions.edit', ['id' => $suggestion->id]) }}" class="btn btn-warning">Edit</a>
