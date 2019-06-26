@@ -3,7 +3,9 @@
 @section('content')
 <div>
     <h2> Editting Suggestion #{{ $suggestion->id }}</h2>
-    <form action="#" method="">
+    <form action="{{ route('suggestions.update', ['id' => $suggestion->id]) }}" method="POST">
+        @method('PATCH')
+        @csrf
         <div>
             <label>Content: </label>
             <input name="content" value="{{ $suggestion->content }}"/>

@@ -33,4 +33,15 @@ class SuggestionController extends Controller
 
         return view('suggestions.edit', compact('suggestion'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $suggestion = Suggestion::find($id);
+        $suggestion->update([
+            'content' => $request->input('content'),
+            'author' => $request->input('author')
+        ]);
+
+        return redirect()->route('suggestions.index');
+    }
 }
