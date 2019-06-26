@@ -3,7 +3,8 @@
 @section('content')
 <div>
     <h2> Add a Suggestion </h2>
-    <form>
+    <form action="{{ route('suggestions.store') }}" method="POST">
+        @csrf
         <div>
             <label>Content: </label>
             <input name="content"/>
