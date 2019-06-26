@@ -23,7 +23,14 @@
                     <td class="text-center">{{ $suggestion->author }}</td>
                     <td class="text-center">{{ $suggestion->content }}</td>
                     <td class="text-center">
-                        <a href="{{ route('suggestions.edit', ['id' => $suggestion->id]) }}" class="btn btn-warning">Edit</a>
+                        <div class="d-inline-flex">
+                            <a href="{{ route('suggestions.edit', ['id' => $suggestion->id]) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('suggestions.delete', ['id' => $suggestion->id]) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 @endforeach

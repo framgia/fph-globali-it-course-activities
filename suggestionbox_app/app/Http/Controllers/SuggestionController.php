@@ -44,4 +44,12 @@ class SuggestionController extends Controller
 
         return redirect()->route('suggestions.index');
     }
+
+    public function delete(Request $request, $id)
+    {
+        $suggestion = Suggestion::find($id);
+        $suggestion->delete();
+
+        return back();
+    }
 }
