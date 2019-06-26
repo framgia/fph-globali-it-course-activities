@@ -25,6 +25,8 @@ class SuggestionController extends Controller
             'content' => $request->input('content'),
             'author' => $request->input('author')
         ]);
+
+        return redirect()->route('suggestions.index');
     }
 
     public function edit($id)
