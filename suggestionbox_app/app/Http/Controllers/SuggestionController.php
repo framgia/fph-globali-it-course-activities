@@ -7,6 +7,11 @@ use App\Suggestion;
 
 class SuggestionController extends Controller
 {
+    public function index()
+    {
+        return view('suggestions.index');
+    }
+
     public function store(Request $request)
     {
         Suggestion::create([

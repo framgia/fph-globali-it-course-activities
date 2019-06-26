@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('suggestions.create');
+    return redirect()->route('suggestions.index');
 });
 
+Route::get('/suggestions', 'SuggestionController@index')->name('suggestions.index');
 Route::post('/suggestions', 'SuggestionController@store')->name('suggestions.store');
