@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Suggestion;
+use App\Vote;
 
 class SuggestionController extends Controller
 {
@@ -51,6 +52,16 @@ class SuggestionController extends Controller
     {
         $suggestion = Suggestion::find($id);
         $suggestion->delete();
+
+        return back();
+    }
+
+    public function upvote($id)
+    {
+        $suggestion = Suggestion::find($id);
+        $vote = new Vote();
+
+        $suggestion->votes()->save($vote);
 
         return back();
     }

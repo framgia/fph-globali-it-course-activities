@@ -25,7 +25,7 @@
                     <td class="text-center">{{ $suggestion->content }}</td>
                     <td class="text-center">
                         <div class="d-inline-flex">
-                            <a href="" class="btn btn-light">Upvote</a>
+                            <a href="{{ route('suggestions.upvote', ['id' => $suggestion->id]) }}" class="btn btn-light">Upvote</a>
                             <a href="" class="btn btn-dark">Downvote</a>
                         </div>
                     </td>
