@@ -27,7 +27,7 @@
                         <div class="d-inline-flex">
                             <span class="my-auto mx-2">{{ $suggestion->votes()->count() }}</span>
                             <a href="{{ route('suggestions.upvote', ['id' => $suggestion->id]) }}" class="btn btn-light">Upvote</a>
-                            <a href="" class="btn btn-dark">Downvote</a>
+                            <a href="{{ route('suggestions.downvote', ['id' => $suggestion->id]) }}" class="btn btn-dark">Downvote</a>
                         </div>
                     </td>
                     <td class="text-center">

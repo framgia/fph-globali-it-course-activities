@@ -65,4 +65,14 @@ class SuggestionController extends Controller
 
         return back();
     }
+
+    public function downvote($id)
+    {
+        $suggestion = Suggestion::find($id);
+
+        $vote = $suggestion->votes()->first();
+        $vote->delete();
+
+        return back();
+    }
 }
