@@ -23,8 +23,12 @@
                     <td class="text-center">{{ $book->title }}</td>
                     <td class="text-center">{{ $book->description }}</td>
                     <td class="text-center">
-                        <a href="{{ route('edit', ['id' => $book->id]) }}">Edit</a>
-                        <a href="{{ route('delete', ['id' => $book->id]) }}">Delete</a>
+                        <a class="btn btn-warning" href="{{ route('edit', ['id' => $book->id]) }}">Edit</a>
+                        <form class="d-inline" action="{{ route('destroy', ['id' => $book->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>    
+                        </form>
                     </td>
                 </tr>
                 @endforeach
