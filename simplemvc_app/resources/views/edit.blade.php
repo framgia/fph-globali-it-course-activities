@@ -6,6 +6,7 @@
     
     <form action="{{ route('update', ['id' => $book->id]) }}" method="POST">
         @csrf
+        @method('PUT')
      <div>
         <label>Title: </label>
         <input value="{{ $book->title }}" name="title"/>
