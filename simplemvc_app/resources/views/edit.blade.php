@@ -16,7 +16,8 @@
         <input value="{{ $book->description }}" name="description"/>
     </div>
     <div>
-        <button> Submit </button>
+        <button class="btn btn-primary"> Submit </button>
+        <a href="{{ URL::previous() }}" class="btn btn-secondary">Back</a>
     </div>
     </form>
 </div>

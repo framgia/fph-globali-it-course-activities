@@ -14,7 +14,8 @@
             <input name="description"/>
         </div>
         <div>
-            <button type="submit"> Create </button>
+            <button class="btn btn-primary" type="submit"> Create </button>
+            <a href="{{ URL::previous() }}" class="btn btn-secondary">Back</a>
         </div>
     </form>
 </div>
