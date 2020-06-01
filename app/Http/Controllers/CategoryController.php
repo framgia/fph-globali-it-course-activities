@@ -21,4 +21,19 @@ class CategoryController extends Controller
         
         return redirect()->route('admin.categories');
     }
+
+    public function edit(Category $category)
+    {
+        return view('admin.category.edit', compact('category'));
+    }
+
+    public function update(Category $category, Request $request)
+    {
+        $category->update([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+
+        return redirect()->route('admin.categories');
+    }
 }
