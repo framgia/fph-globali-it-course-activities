@@ -29,4 +29,5 @@ Route::prefix('admin')->group(function() {
     Route::post('/dashboard/categories/', 'CategoryController@store')->name('admin.category.store');
     Route::get('/dashboard/categories/{category}/edit', 'CategoryController@edit')->name('admin.category.edit');
     Route::patch('/dashboard/categories/{category}', 'CategoryController@update')->name('admin.category.update');
+    Route::delete('/dashboard/categories/{category}', 'CategoryController@destroy')->name('admin.category.destroy');
 });
