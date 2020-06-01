@@ -9,6 +9,9 @@
         </p>
         <div class="row">
             <div class="col-md-12">
+                <a class="btn btn-success my-2 float-right" href="{{ route('admin.category.create') }}" role="button">New Category</a>
+            </div>
+            <div class="col-md-12">
                 <table class="table">
                     <thead class="thead-dark">
                       <tr>

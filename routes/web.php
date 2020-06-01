@@ -24,4 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->group(function() {
     Route::get('/dashboard/categories', 'AdminController@categories')->name('admin.categories');
     Route::get('/dashboard/users', 'AdminController@users')->name('admin.users');
+
+    Route::get('/dashboard/categories/create', 'CategoryController@create')->name('admin.category.create');
+    Route::post('/dashboard/categories/', 'CategoryController@store')->name('admin.category.store');
 });

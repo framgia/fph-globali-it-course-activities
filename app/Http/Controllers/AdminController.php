@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function categories()
     {
-        return view('admin.categories');
+        return view('admin.category.categories');
     }
 
     public function users()
