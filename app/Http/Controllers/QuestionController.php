@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Choice;
 use App\Category;
 use App\Question;
 use Illuminate\Http\Request;
@@ -15,10 +16,18 @@ class QuestionController extends Controller
 
     public function store(Category $category, Request $request)
     {
-        Question::create([
+        $question = Question::create([
             'text' => $request->text,
             'category_id' => $category->id
         ]);
+
+        for ($i=1; $i < 5; $i++) { 
+            Choice::create([
+                'text' => $request["choice$i"],
+                'question_id' => $question->id,
+                'is_correct' => $request['correct_answer'] == $i ? 1 : 0
+            ]);
+        }
 
         return redirect()->route('admin.category.show', ['category' => $category->id]);
     }
