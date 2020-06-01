@@ -21,30 +21,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>HELLO</td>
-                            <td>
-                                <div class="d-inline-flex">
-                                    <a class="btn btn-warning mr-2" href="#" role="button">Edit</a>
-                                    <form action="">
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">2</td>
-                            <td>HELLO</td>
-                            <td>
-                                <div class="d-inline-flex">
-                                    <a class="btn btn-warning mr-2" href="#" role="button">Edit</a>
-                                    <form action="">
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach ($category->questions as $question)
+                            <tr>
+                                <td scope="row">{{ $question->id }}</td>
+                                <td>{{ $question->text }}</td>
+                                <td>
+                                    <div class="d-inline-flex">
+                                        <a class="btn btn-warning mr-2" href="#" role="button">Edit</a>
+                                        <form action="">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
