@@ -36,4 +36,11 @@ class QuestionController extends Controller
 
         return redirect()->route('admin.category.show', ['category' => $category->id]);
     }
+
+    public function destroy(Category $category, Question $question)
+    {
+        $question->delete();
+
+        return redirect()->route('admin.category.show', ['category' => $category->id]);
+    }
 }

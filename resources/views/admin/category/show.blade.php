@@ -28,7 +28,9 @@
                                 <td>
                                     <div class="d-inline-flex">
                                         <a class="btn btn-warning mr-2" href="{{ route('admin.question.edit', ['category' => $category->id, 'question' => $question->id]) }}" role="button">Edit</a>
-                                        <form action="">
+                                        <form action="{{ route('admin.question.destroy', ['category' => $category->id, 'question' => $question->id]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </div>
