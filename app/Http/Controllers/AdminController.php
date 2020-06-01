@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function categories()
     {
-        return view('admin.category.categories');
+        $categories = Category::all();
+
+        return view('admin.category.index', compact('categories'));
     }
 
     public function users()

@@ -7,6 +7,7 @@
           <a href="{{ route('admin.categories') }}" class="mr-4">Categories</a>
           <a href="{{ route('admin.users') }}">Users</a>
         </p>
+        <hr>
         <div class="row">
             <div class="col-md-12">
                 <a class="btn btn-success my-2 float-right" href="{{ route('admin.category.create') }}" role="button">New Category</a>
@@ -22,24 +23,21 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                      @foreach ($categories as $category)
+                        <tr>
+                          <th scope="row">{{ $category->id }}</th>
+                          <td>{{ $category->title }}</td>
+                          <td>{{ $category->description }}</td>
+                          <td>
+                            <div class="d-inline-flex">
+                              <a class="btn btn-warning mr-2" href="#" role="button">Edit</a>
+                              <form action="">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                              </form>
+                            </div>
+                          </td>
+                        </tr>
+                      @endforeach
                     </tbody>
                   </table>
             </div>
