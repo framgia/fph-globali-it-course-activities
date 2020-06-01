@@ -22,4 +22,18 @@ class QuestionController extends Controller
 
         return redirect()->route('admin.category.show', ['category' => $category->id]);
     }
+
+    public function edit(Category $category, Question $question)
+    {
+        return view('admin.question.edit', compact('category', 'question'));
+    }
+
+    public function update(Category $category, Question $question, Request $request)
+    {
+        $question->update([
+            'text' => $request->text
+        ]);
+
+        return redirect()->route('admin.category.show', ['category' => $category->id]);
+    }
 }
