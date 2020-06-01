@@ -27,7 +27,11 @@ Route::prefix('admin')->group(function() {
 
     Route::get('/dashboard/categories/create', 'CategoryController@create')->name('admin.category.create');
     Route::post('/dashboard/categories/', 'CategoryController@store')->name('admin.category.store');
+    Route::get('/dashboard/categories/{category}', 'CategoryController@show')->name('admin.category.show');
     Route::get('/dashboard/categories/{category}/edit', 'CategoryController@edit')->name('admin.category.edit');
     Route::patch('/dashboard/categories/{category}', 'CategoryController@update')->name('admin.category.update');
     Route::delete('/dashboard/categories/{category}', 'CategoryController@destroy')->name('admin.category.destroy');
+
+    Route::get('/dashboard/categories/{category}/questions/create', 'QuestionController@create')->name('admin.question.create');
+    Route::post('/dashboard/categories/{category}/questions/', 'QuestionController@store')->name('admin.question.store');
 });

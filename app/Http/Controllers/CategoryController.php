@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function show(Category $category)
+    {
+        return view('admin.category.show', compact('category'));
+    }
+
     public function create()
     {
         return view('admin.category.create');

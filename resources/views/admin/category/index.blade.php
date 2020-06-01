@@ -26,7 +26,7 @@
                       @foreach ($categories as $category)
                         <tr>
                           <th scope="row">{{ $category->id }}</th>
-                          <td>{{ $category->title }}</td>
+                          <td><a href="{{ route('admin.category.show', ['category' => $category->id]) }}">{{ $category->title }}</a></td>
                           <td>{{ $category->description }}</td>
                           <td>
                             <div class="d-inline-flex">

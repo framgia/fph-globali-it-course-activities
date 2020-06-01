@@ -1,0 +1,53 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ $category->title }}</h4>
+                        <p class="card-text">{{ $category->description }}</p>
+                    </div>
+                </div>
+                <a class="btn btn-primary my-4 float-right" href="{{ route('admin.question.create', ['category' => $category->id]) }}" role="button">Add a Question</a>
+                <table class="table mt-4">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Question</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>HELLO</td>
+                            <td>
+                                <div class="d-inline-flex">
+                                    <a class="btn btn-warning mr-2" href="#" role="button">Edit</a>
+                                    <form action="">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2</td>
+                            <td>HELLO</td>
+                            <td>
+                                <div class="d-inline-flex">
+                                    <a class="btn btn-warning mr-2" href="#" role="button">Edit</a>
+                                    <form action="">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection
