@@ -43,6 +43,15 @@ class QuestionController extends Controller
             'text' => $request->text
         ]);
 
+        for ($i=1; $i < 5; $i++) { 
+            $choice = Choice::find($request["choice_id$i"]);
+
+            $choice->update([
+                'text' => $request["choice$i"],
+                'is_correct' => $request['correct_answer'] == $i ? 1 : 0
+            ]);
+        }
+
         return redirect()->route('admin.category.show', ['category' => $category->id]);
     }
 
