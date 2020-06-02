@@ -42,4 +42,6 @@ Route::prefix('admin')->group(function() {
 
     Route::get('/dashboard/users/create', 'UserController@create')->name('admin.user.create');
     Route::post('/dashboard/users/', 'UserController@store')->name('admin.user.store');
+    Route::get('/dashboard/users/{user}/edit', 'UserController@edit')->name('admin.user.edit');
+    Route::patch('/dashboard/users/{user}/', 'UserController@update')->name('admin.user.update');
 });

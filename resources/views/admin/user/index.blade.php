@@ -32,7 +32,7 @@
                           <td>{{ $user->is_admin == 1 ? 'Admin' : 'User' }}</td>
                           <td>
                             <div class="d-inline-flex">
-                              <a class="btn btn-warning mr-2" href="#" role="button">Edit</a>
+                              <a class="btn btn-warning mr-2" href="{{ route('admin.user.edit', ['user' => $user->id]) }}" role="button">Edit</a>
                               <form action="">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                               </form>
