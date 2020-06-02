@@ -44,4 +44,5 @@ Route::prefix('admin')->group(function() {
     Route::post('/dashboard/users/', 'UserController@store')->name('admin.user.store');
     Route::get('/dashboard/users/{user}/edit', 'UserController@edit')->name('admin.user.edit');
     Route::patch('/dashboard/users/{user}/', 'UserController@update')->name('admin.user.update');
+    Route::delete('/dashboard/users/{user}/', 'UserController@destroy')->name('admin.user.destroy');
 });

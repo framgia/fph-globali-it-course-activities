@@ -33,7 +33,9 @@
                           <td>
                             <div class="d-inline-flex">
                               <a class="btn btn-warning mr-2" href="{{ route('admin.user.edit', ['user' => $user->id]) }}" role="button">Edit</a>
-                              <form action="">
+                              <form action="{{ route('admin.user.destroy', ['user' => $user->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
                               </form>
                             </div>
