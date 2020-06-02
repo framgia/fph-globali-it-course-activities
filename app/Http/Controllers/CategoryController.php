@@ -48,4 +48,11 @@ class CategoryController extends Controller
 
         return redirect()->route('admin.categories');
     }
+
+    public function list()
+    {
+        $categories = Category::all();
+        
+        return view('categories', compact('categories'));
+    }
 }
