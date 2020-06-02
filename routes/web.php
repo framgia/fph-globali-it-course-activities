@@ -25,6 +25,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/dashboard/categories', 'AdminController@categories')->name('admin.categories');
     Route::get('/dashboard/users', 'AdminController@users')->name('admin.users');
 
+    // Category CRUD
     Route::get('/dashboard/categories/create', 'CategoryController@create')->name('admin.category.create');
     Route::post('/dashboard/categories/', 'CategoryController@store')->name('admin.category.store');
     Route::get('/dashboard/categories/{category}', 'CategoryController@show')->name('admin.category.show');
@@ -32,9 +33,13 @@ Route::prefix('admin')->group(function() {
     Route::patch('/dashboard/categories/{category}', 'CategoryController@update')->name('admin.category.update');
     Route::delete('/dashboard/categories/{category}', 'CategoryController@destroy')->name('admin.category.destroy');
 
+    // Questions / Choice CRUD
     Route::get('/dashboard/categories/{category}/questions/create', 'QuestionController@create')->name('admin.question.create');
     Route::post('/dashboard/categories/{category}/questions/', 'QuestionController@store')->name('admin.question.store');
     Route::get('/dashboard/categories/{category}/questions/{question}/edit', 'QuestionController@edit')->name('admin.question.edit');
     Route::patch('/dashboard/categories/{category}/questions/{question}', 'QuestionController@update')->name('admin.question.update');
     Route::delete('/dashboard/categories/{category}/questions/{question}', 'QuestionController@destroy')->name('admin.question.destroy');
+
+    Route::get('/dashboard/users/create', 'UserController@create')->name('admin.user.create');
+    Route::post('/dashboard/users/', 'UserController@store')->name('admin.user.store');
 });

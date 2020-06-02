@@ -7,7 +7,11 @@
           <a href="{{ route('admin.categories') }}" class="mr-4">Categories</a>
           <a href="{{ route('admin.users') }}">Users</a>
         </p>
+        <hr>
         <div class="row">
+          <div class="col-md-12">
+            <a class="btn btn-success my-2 float-right" href="{{ route('admin.user.create') }}" role="button">New User</a>
+          </div>
             <div class="col-md-12">
                 <table class="table">
                     <thead class="thead-dark">
