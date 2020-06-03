@@ -28,6 +28,9 @@ Route::get('/lessons/{lesson}', 'LessonController@take')->name('lesson.take');
 Route::get('/lessons/{lesson}/results', 'LessonController@results')->name('lesson.results');
 Route::post('/lessons/{lesson}/choice/{choice}', 'LessonController@answer')->name('lesson.answer');
 
+Route::post('/follow/{user}', 'RelationshipController@store')->name('user.follow');
+Route::delete('/follow/{user}', 'RelationshipController@destroy')->name('user.unfollow');
+
 Route::prefix('admin')->group(function() {
     Route::get('/dashboard/categories', 'AdminController@categories')->name('admin.categories');
     Route::get('/dashboard/users', 'AdminController@users')->name('admin.users');
