@@ -61,7 +61,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('admin.categories') }}" class="dropdown-item">Admin Dashboard</a>
+                                    <a href="{{ route('user.profile', ['user' => Auth::user()->id]) }}" class="dropdown-item">Profile</a>
+                                    @if (Auth::user()->is_admin)
+                                        <a href="{{ route('admin.categories') }}" class="dropdown-item">Admin Dashboard</a>
+                                    @endif
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

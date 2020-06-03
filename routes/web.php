@@ -23,6 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/categories', 'CategoryController@list')->name('category.list');
 Route::get('/users', 'UserController@list')->name('user.list');
+Route::get('/users/{user}', 'UserController@profile')->name('user.profile');
+Route::get('/users/{user}/edit-profile', 'UserController@editProfile')->name('user.profile.edit');
+Route::patch('/users/{user}/', 'UserController@updateProfile')->name('user.profile.update');
+Route::get('/users/{user}/followers', 'UserController@followers')->name('user.followers');
+Route::get('/users/{user}/following', 'UserController@following')->name('user.following');
+
 Route::post('/lessons', 'LessonController@store')->name('lesson.store');
 Route::get('/lessons/{lesson}', 'LessonController@take')->name('lesson.take');
 Route::get('/lessons/{lesson}/results', 'LessonController@results')->name('lesson.results');
