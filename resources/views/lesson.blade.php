@@ -14,6 +14,7 @@
                                     @csrf
                                     @if ($questions->currentPage() == $questions->lastPage())
                                         <input type="hidden" name="next_page_url" value="{{ route('lesson.results', ['lesson' => $lesson->id]) }}">
+                                        <input type="hidden" name="last_page" value="1">
                                     @else
                                         <input type="hidden" name="next_page_url" value="{{ $questions->nextPageUrl() }}">
                                     @endif

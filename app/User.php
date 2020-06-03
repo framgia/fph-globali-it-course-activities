@@ -56,4 +56,24 @@ class User extends Authenticatable
     {
         return $this->followedUsers()->where('followed_id', $user)->exists();
     }
+
+    public function activities()
+    {
+        return $this->hasMany('App\Activity');
+    }
+
+    public function learnedWords()
+    {
+        $lessons = $this->lessons;
+
+        $wordsCount = 0;
+
+        foreach ($lessons as $lesson) {
+            foreach ($lesson->answers as $answer) {
+                if ($answer->isCorrect()) $wordsCount++;
+            }
+        }
+        
+        return $wordsCount;
+    }
 }

@@ -34,7 +34,7 @@
                                 </form>
                             @endif
                         @endif
-                        <p class="card-text mt-4 text-center">Learned 20 words</p>
+                        <p class="card-text mt-4 text-center">Learned {{ $user->learnedWords() }} words</p>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,24 @@
                     <div class="card-body">
                         <h4 class="card-title">Activities</h4>
                         <hr>
-                        <p class="card-text">Text</p>
+                        @foreach ($user->activities->sortByDesc('created_at') as $activity)
+                            <div class="media my-3">
+                                <img src="https://t4.ftcdn.net/jpg/00/64/67/63/240_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg" width="50" alt="">
+                                <div class="media-body ml-2">
+                                    <h5>{{ $activity->user->name }} 
+                                        @if ($activity->notifiable_type == "App\Relationship")
+                                            followed 
+                                            <a href="{{ route('user.profile', ['user' => $activity->notifiable->followed->id]) }}">
+                                                {{ $activity->notifiable->followed->name }}
+                                            </a>
+                                        @else
+                                            took {{ $activity->notifiable->category->title }}
+                                        @endif
+                                    </h5>
+                                    {{ $activity->created_at->diffForHumans() }}
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

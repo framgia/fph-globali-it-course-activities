@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $activities = auth()->user()->activities;
+
+        foreach (auth()->user()->followedUsers as $followedUser) {
+            foreach ($followedUser->activities as $activity) {
+                $activities->push($activity);
+            }
+        }
+
+        return view('home', compact('activities'));
     }
 }

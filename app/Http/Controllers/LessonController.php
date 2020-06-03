@@ -30,6 +30,12 @@ class LessonController extends Controller
             'choice_id' => $choice
         ]);
 
+        if ($request->last_page) {
+            $lesson->activity()->create([
+                'user_id' => auth()->user()->id
+            ]);
+        }
+
         return redirect($request->next_page_url);
     }
 

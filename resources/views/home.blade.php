@@ -15,10 +15,9 @@
                     <h4>
                         {{ Auth::user()->name }}
                     </h4>
-                    <a href="#">Learned 20 Words</a>
+                    <span class="text-primary">Learned {{ Auth::user()->learnedWords() }} Words</span>
                     <br>
-
-                    <a href="#">Learned 5 Lessons</a>
+                    <span class="text-primary">Learned {{ Auth::user()->lessons()->count() }} Lessons</span>
                 </div>
             </div>
         </div>
@@ -27,29 +26,29 @@
                 <div class="card-body">
                     <h1>Activities</h1>
                     <hr>
-                    <ul class="list-unstyled">
-                        <li class="media d-flex align-items-center mb-4">
-                          <img src="https://t4.ftcdn.net/jpg/00/64/67/63/240_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg" width="100" class="mr-3" alt="...">
-                          <div class="media-body">
-                            <h5 class="mt-0 mb-1"><a href="#">You</a> learned Basic 500</h5>
-                            2 days ago
-                          </div>
-                        </li>
-                        <li class="media d-flex align-items-center mb-4">
-                          <img src="https://t4.ftcdn.net/jpg/00/64/67/63/240_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg" width="100" class="mr-3" alt="...">
-                          <div class="media-body">
-                            <h5 class="mt-0 mb-1"><a href="#">You</a> learned Basic 500</h5>
-                            2 days ago
-                          </div>
-                        </li>
-                        <li class="media d-flex align-items-center">
-                          <img src="https://t4.ftcdn.net/jpg/00/64/67/63/240_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg" width="100" class="mr-3" alt="...">
-                          <div class="media-body">
-                            <h5 class="mt-0 mb-1"><a href="#">You</a> learned Basic 500</h5>
-                            2 days ago
-                          </div>
-                        </li>
-                    </ul>
+                    @foreach ($activities->sortByDesc('created_at')->take(10) as $activity)
+                        <div class="media my-3">
+                            <img src="https://t4.ftcdn.net/jpg/00/64/67/63/240_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg" width="50" alt="">
+                            <div class="media-body ml-2">
+                                <h5>
+                                    @if ($activity->user_id == auth()->user()->id)
+                                        You
+                                    @else
+                                        <a href="{{ route('user.profile', ['user' => $activity->user->id])}}">{{ $activity->user->name }}</a>
+                                    @endif
+                                    @if ($activity->notifiable_type == "App\Relationship")
+                                        followed 
+                                        <a href="{{ route('user.profile', ['user' => $activity->notifiable->followed->id]) }}">
+                                            {{ $activity->notifiable->followed->name }}
+                                        </a>
+                                    @else
+                                        took {{ $activity->notifiable->category->title }}
+                                    @endif
+                                </h5>
+                                {{ $activity->created_at->diffForHumans() }}
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

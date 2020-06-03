@@ -22,4 +22,9 @@ class Answer extends Model
     {
         return $this->choice->question;
     }
+
+    public function isCorrect()
+    {
+        return $this->choice->is_correct;
+    }
 }

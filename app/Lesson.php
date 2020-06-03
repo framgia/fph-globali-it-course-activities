@@ -22,4 +22,9 @@ class Lesson extends Model
     {
         return $this->hasMany('App\Answer');
     }
+
+    public function activity()
+    {
+        return $this->morphOne('App\Activity', 'notifiable');
+    }
 }
