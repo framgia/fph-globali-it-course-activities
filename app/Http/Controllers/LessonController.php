@@ -32,4 +32,9 @@ class LessonController extends Controller
 
         return redirect($request->next_page_url);
     }
+
+    public function results(Lesson $lesson)
+    {
+        return view('results', compact('lesson'));
+    }
 }

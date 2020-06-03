@@ -13,7 +13,7 @@
                                 <form action="{{ route('lesson.answer', ['lesson' => $lesson->id, 'choice' => $choice->id]) }}" method="POST">
                                     @csrf
                                     @if ($questions->currentPage() == $questions->lastPage())
-                                        <input type="hidden" name="next_page_url" value="{{ route('category.list') }}">
+                                        <input type="hidden" name="next_page_url" value="{{ route('lesson.results', ['lesson' => $lesson->id]) }}">
                                     @else
                                         <input type="hidden" name="next_page_url" value="{{ $questions->nextPageUrl() }}">
                                     @endif

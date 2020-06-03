@@ -12,4 +12,14 @@ class Answer extends Model
     {
         return $this->belongsTo('App\Lesson');
     }
+
+    public function choice()
+    {
+        return $this->belongsTo('App\Choice');
+    }
+
+    public function question()
+    {
+        return $this->choice->question;
+    }
 }
