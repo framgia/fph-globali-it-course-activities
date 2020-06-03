@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/categories', 'CategoryController@list')->name('category.list');
+Route::get('/users', 'UserController@list')->name('user.list');
 Route::post('/lessons', 'LessonController@store')->name('lesson.store');
 Route::get('/lessons/{lesson}', 'LessonController@take')->name('lesson.take');
 Route::get('/lessons/{lesson}/results', 'LessonController@results')->name('lesson.results');

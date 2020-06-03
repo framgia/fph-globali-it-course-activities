@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function list()
+    {
+        $users = User::all();
+        
+        return view('users', compact('users'));
+    }
+
     public function create()
     {
         return view('admin.user.create');
