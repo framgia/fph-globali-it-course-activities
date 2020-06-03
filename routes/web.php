@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/categories', 'CategoryController@list')->name('category.list');
+Route::post('/lessons', 'LessonController@store')->name('lesson.store');
+Route::get('/lessons/{lesson}', 'LessonController@take')->name('lesson.take');
+Route::post('/lessons/{lesson}/choice/{choice}', 'LessonController@answer')->name('lesson.answer');
 
 Route::prefix('admin')->group(function() {
     Route::get('/dashboard/categories', 'AdminController@categories')->name('admin.categories');

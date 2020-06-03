@@ -11,7 +11,12 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{ $category->title }}</h4>
                                 <p class="card-text">{{ $category->description }}</p>
-                                <a class="btn btn-primary float-right" href="#" role="button">Take Quiz</a>
+                                <form action="{{ route('lesson.store') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="category_id" value="{{ $category->id }}">
+                                    <button type="submit" class="btn btn-primary float-right">Take Quiz</button>
+                                </form>
                             </div>
                         </div>
                     </div>
