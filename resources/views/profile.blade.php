@@ -53,7 +53,9 @@
                             <div class="card-header">
                                 <div class="float-right d-inline-flex">
                                     <a class="btn btn-warning btn-sm" href="{{ route('post.edit', ['post' => $post->id]) }}" role="button">Edit</a>
-                                    <form action="#">
+                                    <form action="{{ route('post.destroy', ['post' => $post->id]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm ml-2">Delete</button>
                                     </form>
                                 </div>
