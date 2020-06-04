@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users', 'UserController@index')->name('user.list');
+Route::get('/users/{user}', 'UserController@show')->name('user.show');
