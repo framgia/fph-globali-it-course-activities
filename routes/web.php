@@ -25,3 +25,5 @@ Route::get('/users', 'UserController@index')->name('user.list');
 Route::get('/users/{user}', 'UserController@show')->name('user.show');
 
 Route::post('/posts', 'PostController@store')->name('post.store');
+Route::get('/posts/{post}/edit', 'PostController@edit')->name('post.edit');
+Route::patch('/posts/{post}/', 'PostController@update')->name('post.update');
