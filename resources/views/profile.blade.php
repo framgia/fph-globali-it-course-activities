@@ -39,13 +39,35 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="card shadow">
+                {{-- <div class="card shadow">
                     <div class="card-body">
                         <h4 class="card-title text-center">You are not following this user.</h4>
-                        {{-- <hr>
-                        <p class="card-text">Text</p> --}}
+                        <hr>
+                        <p class="card-text">Text</p>
                     </div>
-                </div>
+                </div> --}}
+
+                @foreach ($user->posts as $post)
+                    <div class="card mb-4">
+                        @if ($user->id == auth()->user()->id)
+                            <div class="card-header">
+                                <div class="float-right d-inline-flex">
+                                    <a class="btn btn-warning btn-sm" href="#" role="button">Edit</a>
+                                    <form action="#">
+                                        <button type="submit" class="btn btn-danger btn-sm ml-2">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endif
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <h3 class="text-primary">{{ $post->user->first_name }} {{ $post->user->last_name }}</h3>
+                                <p class="mb-0">{{ $post->text }}</p>
+                                <footer class="blockquote-footer">{{ $post->created_at->diffForHumans() }}</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

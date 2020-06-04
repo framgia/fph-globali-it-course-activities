@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = auth()->user()->posts->sortByDesc('created_at');
+
+        return view('home', compact('posts'));
     }
 }

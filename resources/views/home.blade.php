@@ -20,7 +20,7 @@
                     </div>
                     <hr>
                     <div class="jumbotron p-4">
-                        <h1 class="m-0">1</h1>
+                        <h1 class="m-0">{{ Auth::user()->posts->count() }}</h1>
                         <p class="m-0">blogs posted</p>
                     </div>
                 </div>
@@ -39,23 +39,25 @@
                 </div>
             </div>
             <h1>Posts</h1>
-            <div class="card">
-                <div class="card-header">
-                    <div class="float-right d-inline-flex">
-                        <a class="btn btn-warning btn-sm" href="#" role="button">Edit</a>
-                        <form action="#">
-                            <button type="submit" class="btn btn-danger btn-sm ml-2">Delete</button>
-                        </form>
+            @foreach ($posts as $post)
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <div class="float-right d-inline-flex">
+                            <a class="btn btn-warning btn-sm" href="#" role="button">Edit</a>
+                            <form action="#">
+                                <button type="submit" class="btn btn-danger btn-sm ml-2">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <h3 class="text-primary">{{ $post->user->first_name }} {{ $post->user->last_name }}</h3>
+                            <p class="mb-0">{{ $post->text }}</p>
+                            <footer class="blockquote-footer">{{ $post->created_at->diffForHumans() }}</footer>
+                        </blockquote>
                     </div>
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <h3 class="text-primary">John Doe</h3>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <footer class="blockquote-footer">20 hours ago</footer>
-                    </blockquote>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
