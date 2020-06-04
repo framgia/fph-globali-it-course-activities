@@ -29,9 +29,10 @@
         <div class="col-md-8">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form action="#">
+                    <form action="{{ route('post.store') }}" method="POST">
+                        @csrf
                         <div class="form-group">
-                          <textarea class="form-control" name="text" rows="3" style="resize: none;"></textarea>
+                          <textarea class="form-control" name="text" rows="3" style="resize: none;" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary float-right px-5">Post</button>
                     </form>
