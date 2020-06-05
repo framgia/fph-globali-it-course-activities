@@ -28,3 +28,8 @@ Route::post('/posts', 'PostController@store')->name('post.store');
 Route::get('/posts/{post}/edit', 'PostController@edit')->name('post.edit');
 Route::patch('/posts/{post}/', 'PostController@update')->name('post.update');
 Route::delete('/posts/{post}/', 'PostController@destroy')->name('post.destroy');
+
+Route::post('/users/{user}/follow', 'UserController@follow')->name('user.follow');
+Route::delete('/users/{user}/unfollow', 'UserController@unfollow')->name('user.unfollow');
+Route::get('/users/{user}/followers', 'UserController@followers')->name('user.followers');
+Route::get('/users/{user}/following', 'UserController@following')->name('user.following');

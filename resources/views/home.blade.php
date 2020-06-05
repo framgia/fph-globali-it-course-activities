@@ -12,10 +12,10 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-6 text-primary">
-                            <p class="m-0">2<br>Following</p>
+                            <p><a href="{{ route('user.followers', ['user' => Auth::user()->id]) }}">{{ Auth::user()->followers->count() }} <br>Followers</a></p>
                         </div>
                         <div class="col-md-6 text-primary">
-                            <p class="m-0">2<br>Followers</p>
+                            <p><a href="{{ route('user.following', ['user' => Auth::user()->id]) }}">{{ Auth::user()->followedUsers->count() }} <br>Following</a></p>
                         </div>
                     </div>
                     <hr>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <h1>Posts</h1>
-            @foreach ($posts as $post)
+            @foreach ($posts->sortByDesc('created_at') as $post)
                 <div class="card mb-4">
                     <div class="card-header">
                         <div class="float-right d-inline-flex">

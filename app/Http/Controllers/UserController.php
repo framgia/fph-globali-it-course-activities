@@ -18,4 +18,28 @@ class UserController extends Controller
     {
         return view('profile', compact('user'));
     }
+
+    public function follow(User $user)
+    {
+        auth()->user()->followedUsers()->attach($user);
+
+        return redirect()->back();
+    }
+
+    public function unfollow(User $user)
+    {
+        auth()->user()->followedUsers()->detach($user);
+
+        return redirect()->back();
+    }
+
+    public function followers(User $user)
+    {
+        return view('followers', compact('user'));
+    }
+
+    public function following(User $user)
+    {
+        return view('following', compact('user'));
+    }
 }

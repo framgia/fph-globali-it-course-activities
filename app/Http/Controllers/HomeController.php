@@ -23,7 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = auth()->user()->posts->sortByDesc('created_at');
+        $posts = auth()->user()->posts;
+
+        foreach (auth()->user()->followedUsers as $followedUser) {
+            foreach ($followedUser->posts as $post) {
+                $posts->push($post);
+            }
+        }
 
         return view('home', compact('posts'));
     }
