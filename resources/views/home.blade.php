@@ -8,7 +8,7 @@
                 <img class="card-img-top" src="https://st3.depositphotos.com/4111759/13425/v/450/depositphotos_134255532-stock-illustration-profile-placeholder-male-default-profile.jpg" alt="Profile Image">
                 <div class="card-body text-center">
                     <h2>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h2>
-                    <a class="btn btn-primary" href="#" role="button">Edit Profile</a>
+                    <a class="btn btn-primary" href="{{ route('user.profile.edit', ['user' => Auth::user()->id]) }}" role="button">Edit Profile</a>
                     <hr>
                     <div class="row">
                         <div class="col-md-6 text-primary">

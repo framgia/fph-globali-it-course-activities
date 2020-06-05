@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users', 'UserController@index')->name('user.list');
 Route::get('/users/{user}', 'UserController@show')->name('user.show');
+Route::get('/users/{user}/edit-profile', 'UserController@editProfile')->name('user.profile.edit');
+Route::patch('/users/{user}/', 'UserController@updateProfile')->name('user.profile.update');
 
 Route::post('/posts', 'PostController@store')->name('post.store');
 Route::get('/posts/{post}/edit', 'PostController@edit')->name('post.edit');

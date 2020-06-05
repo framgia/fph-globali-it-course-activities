@@ -18,8 +18,8 @@
                             </div>
                         </div>
 
-                        @if ($user == auth()->user())
-                            <a class="btn btn-primary btn-lg btn-block" href="#">Edit Profile</a>
+                        @if ($user->id == auth()->user()->id)
+                            <a class="btn btn-primary btn-lg btn-block" href="{{ route('user.profile.edit', ['user' => auth()->user()->id]) }}">Edit Profile</a>
                         @else
                             @if (auth()->user()->isFollowing($user->id))
                                 <form action="{{ route('user.unfollow', ['user' => $user->id]) }}" method="POST">
