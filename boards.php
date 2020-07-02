@@ -69,10 +69,10 @@
                                 </td>
                                 <td>
                                     <div class="d-inline-flex">
-                                        <a href="board-edit.php?id=<?php echo $id; ?>" class="btn btn-warning mr-2">
+                                        <a href="boards-edit.php?id=<?php echo $id; ?>" class="btn btn-warning mr-2">
                                             Edit
                                         </a>
-                                        <a href="board-destroy.php?id=<?php echo $id; ?>" class="btn btn-danger">
+                                        <a href="boards-destroy.php?id=<?php echo $id; ?>" class="btn btn-danger">
                                             Delete
                                         </a>
                                     </div>

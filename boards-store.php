@@ -10,6 +10,6 @@ if ($conn->query($sql)){
     header('location: boards.php');
     exit();
 } else {
-	echo "Error during registration" . $conn->error;
+	echo "Error during registration" . $conn->errorInfo();
 }
 ?>
