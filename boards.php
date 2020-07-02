@@ -32,7 +32,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 d-flex justify-content-between align-items-center my-2">
-                <h1>Boards</h1><a class="btn btn-success" href="createNewBoard.php">+ Create New Board</a>
+                <h1>Boards</h1><a class="btn btn-success" href="boards-create.php">+ Create New Board</a>
             </div>
             <table class="table col-12">
                 <thead class="thead-dark">

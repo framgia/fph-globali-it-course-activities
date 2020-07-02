@@ -40,3 +40,5 @@ CREATE TABLE `memo_application`.`memos` (
 
 ## Boards
 Index Page - boards.php
+Create Page - boards-create.php
+Store Function - boards-store.php
