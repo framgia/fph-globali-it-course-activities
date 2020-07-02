@@ -4,9 +4,9 @@ Memo System is a pure PHP/MySQL Application where you can Create, Read, Update, 
 
 ## Database Initialization
 
-Using MySQL Commands, create a Schema named 'memo_app'
+Using MySQL Commands, create a Schema named 'memo_application'
 ```sql
-CREATE SCHEMA `memo_app`;
+CREATE SCHEMA `memo_application`;
 ```
 
 Then, create two tables which is `boards` and `memos`
@@ -39,3 +39,4 @@ CREATE TABLE `memo_application`.`memos` (
 ```
 
 ## Boards
+Index Page - boards.php
