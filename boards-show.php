@@ -64,7 +64,7 @@ $memos = $conn->query($sql_memo);
                     <div class="col-12">
                         <div class="d-flex justify-content-between align-items-center">
                             <h1><?php echo $board_name; ?></h1>
-                            <a class="btn btn-success" href="memos-create.php">+ Create New Memo</a>
+                            <a class="btn btn-success" href="memos-create.php?id=<?php echo $board['id']; ?>">+ Create New Memo</a>
                         </div>
                     </div>
                     <div class="col-12">
