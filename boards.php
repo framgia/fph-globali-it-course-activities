@@ -57,7 +57,7 @@
                             ?>
                             <tr>
                                 <td scope="row">
-                                    <a href="board-show.php?id<?php echo $id; ?>">
+                                    <a href="boards-show.php?id=<?php echo $id; ?>">
                                         <?php echo $id; ?>
                                     </a>
                                 </td>
