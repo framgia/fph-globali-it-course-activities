@@ -75,7 +75,7 @@ $memos = $conn->query($sql_memo);
                                     $memo_name = $memo['name'];
                                     $memo_contents = $memo['contents'];
                                 ?>
-                                <div class="card mb-2">
+                                <a href="memos-edit.php?id=<?php echo $memo_id; ?>" class="card mb-2 shadow" style="text-decoration: none; color: black;">
                                     <div class="card-body">
                                         <li class="media">
                                             <div class="media-body">
@@ -84,7 +84,7 @@ $memos = $conn->query($sql_memo);
                                             </div>
                                         </li>
                                     </div>
-                                </div>
+                                </a>
                             <?php endforeach; ?>
                         </ul>
                     </div>

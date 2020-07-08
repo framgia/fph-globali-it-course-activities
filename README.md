@@ -47,3 +47,8 @@ Store Function - boards-store.php
 Edit Page - boards-edit.php
 Update Function - boards-update.php
 Delete Function - boards-destroy.php
+
+## Memos
+Store Function - memos-store.php
+Edit Page - memos-edit.php
+Update Function - memos-update.php
