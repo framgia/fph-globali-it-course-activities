@@ -43,6 +43,14 @@ $memo = $conn->query($sql)
                 <div class="card shadow">
                     <div class="card-body">
                         <h1 class="card-title">Edit Memo under <?php echo $board['name'] ?></h1>
+                        <div class="row">
+                            <div class="col-12">
+                                <form action="memos-destroy.php" method="POST">
+                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                    <button type="submit" class="float-right btn btn-danger">Delete Memo</button>
+                                </form>
+                            </div>
+                        </div>
                         <form action="memos-update.php" method="POST">
                             <input class="form-group" type="hidden" name="id" value="<?php echo $id; ?>">
                             <div class="form-group">
